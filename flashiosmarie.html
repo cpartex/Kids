@@ -1,0 +1,201 @@
+<script>
+    const flashcards = [
+        // Familie
+        { id: 1, category: 'Familie', dutch: 'de broer', german: 'der Bruder / die Brüder', pronunciation: 'der Bruder' },
+        { id: 2, category: 'Familie', dutch: 'de halfbroer', german: 'der Halbbruder / die Halbbrüder', pronunciation: 'der Halbbruder' },
+        { id: 3, category: 'Familie', dutch: 'de jongen', german: 'der Junge / die Jungen', pronunciation: 'der Junge' },
+        { id: 4, category: 'Familie', dutch: 'de man', german: 'der Mann / die Männer', pronunciation: 'der Mann' },
+        { id: 5, category: 'Familie', dutch: 'de neef', german: 'der Cousin / die Cousins', pronunciation: 'der Cousin' },
+        { id: 6, category: 'Familie', dutch: 'de oom', german: 'der Onkel / die Onkel', pronunciation: 'der Onkel' },
+        { id: 7, category: 'Familie', dutch: 'de opa', german: 'der Opa / die Opas', pronunciation: 'der Opa' },
+        { id: 8, category: 'Familie', dutch: 'de stiefvader', german: 'der Stiefvader', pronunciation: 'der Stiefvader' },
+        { id: 9, category: 'Familie', dutch: 'de vader', german: 'der Vater / die Väter', pronunciation: 'der Vater' },
+        { id: 10, category: 'Familie', dutch: 'de vriend', german: 'der Freund / die Freunde', pronunciation: 'der Freund' },
+        { id: 11, category: 'Familie', dutch: 'het gezin', german: 'die Familie / die Familien', pronunciation: 'die Familie' },
+        { id: 12, category: 'Familie', dutch: 'de halfzus', german: 'die Halbschwester / die Halbschwestern', pronunciation: 'die Halbschwester' },
+        { id: 13, category: 'Familie', dutch: 'de moeder', german: 'die Mutter / die Mütter', pronunciation: 'die Mutter' },
+        { id: 14, category: 'Familie', dutch: 'de nicht', german: 'die Cousine / die Cousinen', pronunciation: 'die Cousine' },
+        { id: 15, category: 'Familie', dutch: 'de oma', german: 'die Oma / die Omas', pronunciation: 'die Oma' },
+        { id: 16, category: 'Familie', dutch: 'de stiefmoeder', german: 'die Stiefmutter', pronunciation: 'die Stiefmutter' },
+        { id: 17, category: 'Familie', dutch: 'de tante', german: 'die Tante / die Tanten', pronunciation: 'die Tante' },
+        { id: 18, category: 'Familie', dutch: 'de vriendin', german: 'die Freundin / die Freundinnen', pronunciation: 'die Freundin' },
+        { id: 19, category: 'Familie', dutch: 'de vrouw', german: 'die Frau / die Frauen', pronunciation: 'die Frau' },
+        { id: 20, category: 'Familie', dutch: 'de zus', german: 'die Schwester / die Schwestern', pronunciation: 'die Schwester' },
+        { id: 21, category: 'Familie', dutch: 'het kind', german: 'das Kind / die Kinder', pronunciation: 'das Kind' },
+        { id: 22, category: 'Familie', dutch: 'het meisje', german: 'das Mädchen / die Mädchen', pronunciation: 'das Mädchen' },
+        { id: 23, category: 'Familie', dutch: 'de broers en zussen', german: 'die Geschwister', pronunciation: 'die Geschwister' },
+        { id: 24, category: 'Familie', dutch: 'de grootouders', german: 'die Großeltern', pronunciation: 'die Großeltern' },
+        { id: 25, category: 'Familie', dutch: 'de ouders', german: 'die Eltern', pronunciation: 'die Eltern' },
+        
+        // Werkwoorden
+        { id: 26, category: 'Werkwoorden', dutch: 'maken', german: 'machen', pronunciation: 'machen' },
+        { id: 27, category: 'Werkwoorden', dutch: 'hebben', german: 'haben', pronunciation: 'haben' },
+        { id: 28, category: 'Werkwoorden', dutch: 'voorstellen', german: 'vorstellen', pronunciation: 'vorstellen' },
+        { id: 29, category: 'Werkwoorden', dutch: 'heten', german: 'heißen', pronunciation: 'heißen' },
+        { id: 30, category: 'Werkwoorden', dutch: 'komen', german: 'kommen', pronunciation: 'kommen' },
+        { id: 31, category: 'Werkwoorden', dutch: 'wonen', german: 'wohnen', pronunciation: 'wohnen' },
+        { id: 32, category: 'Werkwoorden', dutch: 'zijn', german: 'sein', pronunciation: 'sein' },
+        
+        // Bijvoeglijke naamwoorden
+        { id: 33, category: 'Bijvoeglijke nw', dutch: 'aardig', german: 'nett', pronunciation: 'nett' },
+        { id: 34, category: 'Bijvoeglijke nw', dutch: 'groot', german: 'groß', pronunciation: 'groß' },
+        { id: 35, category: 'Bijvoeglijke nw', dutch: 'jong', german: 'jung', pronunciation: 'jung' },
+        { id: 36, category: 'Bijvoeglijke nw', dutch: 'klein', german: 'klein', pronunciation: 'klein' },
+        { id: 37, category: 'Bijvoeglijke nw', dutch: 'mooi', german: 'schön', pronunciation: 'schön' },
+        { id: 38, category: 'Bijvoeglijke nw', dutch: 'knap', german: 'hübsch', pronunciation: 'hübsch' },
+        { id: 39, category: 'Bijvoeglijke nw', dutch: 'vriendelijk', german: 'freundlich', pronunciation: 'freundlich' },
+        { id: 40, category: 'Bijvoeglijke nw', dutch: 'heel erg', german: 'sehr', pronunciation: 'sehr' },
+        { id: 41, category: 'Bijvoeglijke nw', dutch: 'niet', german: 'nicht', pronunciation: 'nicht' },
+        { id: 42, category: 'Bijvoeglijke nw', dutch: 'twintig', german: 'zwanzig', pronunciation: 'zwanzig' },
+        { id: 43, category: 'Bijvoeglijke nw', dutch: 'éénentwintig', german: 'einundzwanzig', pronunciation: 'einundzwanzig' },
+        { id: 44, category: 'Bijvoeglijke nw', dutch: 'dertig', german: 'dreißig', pronunciation: 'dreißig' },
+        { id: 45, category: 'Bijvoeglijke nw', dutch: 'veertig', german: 'vierzig', pronunciation: 'vierzig' },
+        { id: 46, category: 'Bijvoeglijke nw', dutch: 'vijftig', german: 'fünfzig', pronunciation: 'fünfzig' },
+        { id: 47, category: 'Bijvoeglijke nw', dutch: 'zestig', german: 'sechzig', pronunciation: 'sechzig' },
+        { id: 48, category: 'Bijvoeglijke nw', dutch: 'zeventig', german: 'siebzig', pronunciation: 'siebzig' },
+        { id: 49, category: 'Bijvoeglijke nw', dutch: 'tachtig', german: 'achtzig', pronunciation: 'achtzig' },
+        { id: 50, category: 'Bijvoeglijke nw', dutch: 'negentig', german: 'neunzig', pronunciation: 'neunzig' },
+        { id: 51, category: 'Bijvoeglijke nw', dutch: 'honderd', german: 'hundert', pronunciation: 'hundert' },
+        { id: 52, category: 'Bijvoeglijke nw', dutch: 'duizend', german: 'tausend', pronunciation: 'tausend' },
+        { id: 53, category: 'Bijvoeglijke nw', dutch: 'miljoen', german: 'eine Million', pronunciation: 'eine Million' },
+        
+        // Diversen
+        { id: 54, category: 'Diversen', dutch: 'zonder', german: 'ohne', pronunciation: 'ohne' },
+        { id: 55, category: 'Diversen', dutch: 'misschien', german: 'vielleicht', pronunciation: 'vielleicht' },
+        { id: 56, category: 'Diversen', dutch: 'belangrijk', german: 'wichtig', pronunciation: 'wichtig' },
+        { id: 57, category: 'Diversen', dutch: 'kiezen', german: 'wählen', pronunciation: 'wählen' },
+    ];
+
+    let currentIndex = 0;
+    let showAnswer = false;
+    let cards = [...flashcards];
+    let selectedCategory = 'Alle';
+
+    const categorySelect = document.getElementById('categorySelect');
+    const shuffleBtn = document.getElementById('shuffleBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const speakBtn = document.getElementById('speakBtn');
+    const categoryEl = document.getElementById('category');
+    const dutchEl = document.getElementById('dutch');
+    const germanEl = document.getElementById('german');
+    const counterEl = document.getElementById('counter');
+    const answerSection = document.getElementById('answerSection');
+
+    // Initialize categories
+    const categories = ['Alle', ...new Set(flashcards.map(card => card.category))];
+    categories.forEach(cat => {
+        const option = document.createElement('option');
+        option.value = cat;
+        option.textContent = cat;
+        categorySelect.appendChild(option);
+    });
+
+    /**
+     * Spreekt de tekst uit met behulp van de native Web Speech API van de browser.
+     * @param {string} text De tekst om uit te spreken.
+     */
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel(); // Annuleer lopende spraak
+            const utterance = new SpeechSynthesisUtterance(text);
+
+            // Stel de taal in op Duits ('de-DE') om een Duitse stem te forceren
+            // Dit is cruciaal voor de juiste uitspraak
+            utterance.lang = 'de-DE'; 
+
+            window.speechSynthesis.speak(utterance);
+        } else {
+            // Fallback voor browsers die de API niet ondersteunen (zeer zeldzaam nu)
+            console.error('Web Speech API wordt niet ondersteund in deze browser.');
+            alert('Uitspraak is niet beschikbaar in deze browser.');
+        }
+    }
+
+    function updateCard() {
+        // Voorkom fouten als er geen kaarten zijn in een categorie
+        if (cards.length === 0) {
+            categoryEl.textContent = 'Geen kaarten';
+            dutchEl.textContent = 'Selecteer een andere categorie';
+            germanEl.textContent = '';
+            counterEl.textContent = '0 / 0';
+            answerSection.classList.add('hidden');
+            toggleBtn.textContent = 'Toon antwoord';
+            return;
+        }
+
+        const card = cards[currentIndex];
+        categoryEl.textContent = card.category;
+        dutchEl.textContent = card.dutch;
+        germanEl.textContent = card.german;
+        counterEl.textContent = `${currentIndex + 1} / ${cards.length}`;
+        
+        if (showAnswer) {
+            answerSection.classList.remove('hidden');
+            toggleBtn.textContent = 'Verberg antwoord';
+        } else {
+            answerSection.classList.add('hidden');
+            toggleBtn.textContent = 'Toon antwoord';
+        }
+    }
+
+    function nextCard() {
+        if (cards.length === 0) return;
+        currentIndex = (currentIndex + 1) % cards.length;
+        showAnswer = false;
+        updateCard();
+    }
+
+    function prevCard() {
+        if (cards.length === 0) return;
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        showAnswer = false;
+        updateCard();
+    }
+
+    function shuffleCards() {
+        if (cards.length === 0) return;
+        cards = [...cards].sort(() => Math.random() - 0.5);
+        currentIndex = 0;
+        showAnswer = false;
+        updateCard();
+    }
+
+    function resetCards() {
+        if (selectedCategory === 'Alle') {
+            cards = [...flashcards];
+        } else {
+            cards = flashcards.filter(card => card.category === selectedCategory);
+        }
+        currentIndex = 0;
+        showAnswer = false;
+        updateCard();
+    }
+
+    categorySelect.addEventListener('change', (e) => {
+        selectedCategory = e.target.value;
+        resetCards(); // Gebruik resetCards om de kaarten te filteren en te initialiseren
+    });
+
+    toggleBtn.addEventListener('click', () => {
+        if (cards.length === 0) return;
+        showAnswer = !showAnswer;
+        updateCard();
+    });
+
+    prevBtn.addEventListener('click', prevCard);
+    nextBtn.addEventListener('click', nextCard);
+    shuffleBtn.addEventListener('click', shuffleCards);
+    resetBtn.addEventListener('click', resetCards);
+    speakBtn.addEventListener('click', () => {
+        if (cards.length > 0) {
+            // Spreek de 'pronunciation' tekst uit (meestal hetzelfde als 'german')
+            speak(cards[currentIndex].pronunciation); 
+        }
+    });
+
+    // Initialize
+    updateCard();
+</script>
